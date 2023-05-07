@@ -28,7 +28,6 @@ public partial class Member_View : System.Web.UI.Page
         if (ODT.Rows.Count == 1)
         {
             OAdapter.ORDERMST_UPDATE_CART(Convert.ToInt32(ODT.Rows[0]["oid"].ToString()), 1, Convert.ToDouble(lblprice.Text));
-
         }
         else
         {

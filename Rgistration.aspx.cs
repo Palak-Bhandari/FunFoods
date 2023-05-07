@@ -23,15 +23,14 @@ public partial class Rgistration : System.Web.UI.Page
         }
         else
         {
-
             string gnd = "";
             if (rdofemale.Checked == true)
             {
-                gnd = "Male";
+                gnd = "Female";
             }
             else
             {
-                gnd = "Female";
+                gnd = "Male";
             }
             UAdapter.Insert(txtfname.Text, txtlname.Text, txtmobile.Text, gnd, txtadd.Text, txtcity.Text, txtpincode.Text, txtemail.Text, txtpass.Text);
             lblmsg.Text = "Registration Successfully";
@@ -46,9 +45,6 @@ public partial class Rgistration : System.Web.UI.Page
                 txtemail.Text = "";
                 txtpass.Text = "";
                 txtconfirmpass.Text = "";
-
-
-
             }
         }
     }

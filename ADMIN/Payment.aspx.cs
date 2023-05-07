@@ -36,14 +36,9 @@ public partial class ADMIN_Payment : System.Web.UI.Page
         }
         else
         {
-           
-          //  PDT = PAdapter.Select_By_PID(Convert.ToInt32( drpemail.SelectedValue));
             PDT = PAdapter.Select_B_EMAIL(drpemail.SelectedItem.Text);
-            
             gvgrid.DataSource = PDT;
             gvgrid.DataBind();
-
-            
             lbl.Text = "Total Record = " + gvgrid.Rows.Count.ToString();
         }
     }

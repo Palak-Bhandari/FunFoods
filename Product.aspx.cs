@@ -69,8 +69,6 @@ public partial class Product : System.Web.UI.Page
                 DataList1.DataSource = PDT;
                 DataList1.DataBind();
             }
-
-          
         }
     }
     protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)

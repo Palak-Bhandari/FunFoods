@@ -63,7 +63,7 @@
                         <td align="left">
                             <asp:RadioButton ID="rdoonine" runat="server" AutoPostBack="True"
                                 ForeColor="#FFFFCC" GroupName="a" OnCheckedChanged="rdoonine_CheckedChanged"
-                                Text="Net" />
+                                Text="Card" />
                             <asp:RadioButton ID="rdooffline" runat="server" AutoPostBack="True"
                                 ForeColor="#FFFFCC" GroupName="a" OnCheckedChanged="rdooffline_CheckedChanged"
                                 Text="Cash" />
@@ -138,7 +138,7 @@
                                         <tr>
                                             <td>
                                                 <asp:Button ID="btnpayoffline" runat="server" CssClass="btn"
-                                                    OnClick="btnpayoffline_Click" Text="PayNow" />
+                                                    OnClick="btnpayoffline_Click" Text="Next" />
                                             </td>
                                         </tr>
                                         <tr>

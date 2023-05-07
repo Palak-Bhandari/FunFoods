@@ -25,21 +25,17 @@ public partial class Member_Payment : System.Web.UI.Page
     protected void rdooffline_CheckedChanged(object sender, EventArgs e)
     {
         ODT = OAdapter.SELECT_AMT(Session["email"].ToString());
-
         lblamtt.Text = ODT.Rows[0]["tprice"].ToString();
-    
         MultiView1.ActiveViewIndex = 1;
     }
     protected void btnpayonline_Click(object sender, EventArgs e)
     {
         PtAdapter.Insert(Session["email"].ToString(), "Online", drpbankname.SelectedItem.Text, txtcard.Text, Convert.ToInt32(txtcvv.Text), Convert.ToDouble(lblamt.Text));
         OAdapter.ORDERMST_UPDATE_STATUS_BY_EMAIL(Session["email"].ToString(), 1);
-        
         Response.Redirect("Thanks.aspx");
     }
     protected void btnpayoffline_Click(object sender, EventArgs e)
     {
-        
        // lblamtt.Text = lblamt.Text;
         PtAdapter.Insert(Session["email"].ToString(), "Offline", "-", "-", 0, Convert.ToDouble(lblamt.Text));
         OAdapter.ORDERMST_UPDATE_STATUS_BY_EMAIL(Session["email"].ToString(), 1);

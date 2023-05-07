@@ -23,7 +23,6 @@ public partial class Member_MyCart : System.Web.UI.Page
 
             if (GridView1.Rows.Count == 0)
             {
-
                 btnchckout.Visible = false;
                 Button1.Visible = false;
             }
@@ -31,8 +30,6 @@ public partial class Member_MyCart : System.Web.UI.Page
             {
                 btnchckout.Visible = true;
                 Button1.Visible = true;
-            
-            
             }
         
         }
@@ -40,7 +37,6 @@ public partial class Member_MyCart : System.Web.UI.Page
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         int oidd = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
-
         OAdapter.Delete(oidd);
         ODT = OAdapter.SELECT_EMAIL_STATUS(Session["email"].ToString(), 0);
         GridView1.DataSource = ODT;
@@ -58,7 +54,7 @@ public partial class Member_MyCart : System.Web.UI.Page
         double tpricee = Convert.ToInt32(pricee) * Convert.ToInt32(txtqq.Text);
 
         OAdapter.ORDERMST_UPDATE_Cart_ALLREADY_ADD(oidd, Convert.ToInt32(txtqq.Text), tpricee);
- ODT = OAdapter.SELECT_EMAIL_STATUS(Session["email"].ToString(), 0);
+        ODT = OAdapter.SELECT_EMAIL_STATUS(Session["email"].ToString(), 0);
         GridView1.DataSource = ODT;
         GridView1.DataBind();
     }

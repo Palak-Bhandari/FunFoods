@@ -18,14 +18,10 @@ public partial class Fpassword : System.Web.UI.Page
         UDT = UAdapter.select_forgot_password(txtusername.Text, txtmobile.Text);
         if (UDT.Rows.Count > 0)
         {
-
             lblmsg.Text = "Password =" + UDT.Rows[0]["password"].ToString();
-
-
         }
         else
         {
-
             lblmsg.Text = "Invalid name or mobile";
         }
     }

@@ -22,14 +22,11 @@ public partial class Login : System.Web.UI.Page
             Session["name"] = UDT.Rows[0]["fname"].ToString() +" " + UDT.Rows[0]["lname"].ToString();
             Session["uid"] = UDT.Rows[0]["uid"].ToString();
             Response.Redirect("Home.aspx");
-
         }
         else
         {
             lblmsg.Text = "Invalid username or password";
-
         }
-
     }
     protected void txtpassword_TextChanged(object sender, EventArgs e)
     {

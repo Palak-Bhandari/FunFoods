@@ -18,7 +18,7 @@ public partial class ADMIN_AddProduct : System.Web.UI.Page
         FileUpload1.SaveAs(Server.MapPath("~/product/")+FileUpload1.FileName);
 
         PAdapter.Insert(txtname.Text, txtdetail.Text, Convert.ToDouble(txtprice.Text), "~/product/" + FileUpload1.FileName.ToString(), drpcate.SelectedItem.Text, 0);
-        lblmsg.Text = "Product Insertd";
+        lblmsg.Text = "Product Inserted!!";
         txtprice.Text = "";
         txtname.Text = "";
         txtdetail.Text = "";
